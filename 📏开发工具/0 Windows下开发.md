@@ -86,6 +86,8 @@ https://spug.dev/docs/install-docker/
 ```
 docker pull registry.aliyuncs.com/openspug/spug
 docker run -d --restart=always --name=spug -p 8888:80 -v /root/local/data/:/data registry.aliyuncs.com/openspug/spug
+docker exec spug init_spug admin admin
+docker restart spug
 ```
 
 ### Docker可视化管理工具Portainer
