@@ -272,3 +272,41 @@ esac
 # restart为脚本运行参数
 [root@localhost shell]# ./decode.sh restart
 ```
+
+## 将返回的结果赋值给变量
+使用符号`（ESC下的），示例
+```bash
+CONTENT=`cat ./result.html`
+```
+完整示例:
+```bash
+set -eux
+
+CITY=Shenzhen
+LANGUAGE="zh-CN"
+UNIT=m
+UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+
+curl \
+  -H "Accept-Language: $LANGUAGE" \
+  -H "User-Agent: $UA" \
+  -o result.html \
+  wttr.in/$CITY?format=4\&$UNIT
+
+CONTENT=`cat ./result.html`
+echo "$CONTENT"
+DINGTALK_URL="https://oapi.dingtalk.com/robot/send?access_token=xxxxxx"
+
+function sendDingTalk(){
+    curl "$DINGTALK_URL" -H 'Content-Type: application/json' -d "{
+        \"msgtype\": \"text\",
+        \"text\": {\"content\": \"$CONTENT\"},
+    }"
+}
+
+sendDingTalk $CONTENT
+
+```
+
+
+

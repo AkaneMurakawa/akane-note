@@ -589,9 +589,41 @@ public class RedisTemplate<K, V> extends RedisAccessor implements RedisOperation
 
 ## 7 生成自增的序列
 
-以id+日期作为key，设置自增，这样就可以每天从0开始生成自增的序列了
+以id+日期作为key，设置自增，这样就可以每天从0开始生成自增的序列了。
+```java
+    private static final String DATE_FORMAT_PATTERN = "yyMMdd";
+    private static final String KEY_PREFIX = "example:";
+    @Resource
+    private RedisTemplate<String, String> stringRedisTemplate;
+    
+    public String generateNo(String type) {
+        GeneratorVo generatorVo = idGenerator(type);
+        return String.format("%s%s%04d", type, generatorVo.getTime(), generatorVo.getSequence());
+    }
+    
+    protected GeneratorVo idGenerator(String type) {
+        String dateSegment = DateFormatUtils.format(new Date(), DATE_FORMAT_PATTERN);
+        String key = KEY_PREFIX + getApplicationName() + ":";
+        key = key + type + ":" + dateSegment;
+        int serialNumber = stringRedisTemplate.opsForValue().increment(key, 1).intValue();
+        if (serialNumber <= 1) {
+            stringRedisTemplate.expire(key, 2, TimeUnit.DAYS);
+        }
+        GeneratorVo generatorVo = new GeneratorVo();
+        generatorVo.setTime(dateSegment);
+        generatorVo.setSequence(serialNumber);
+        return generatorVo;
+    }
+```
 
 
+
+## 8 分布式锁
+https://www.jianshu.com/p/750ac97eb29e
+在实现redis分布式锁之前，我们先分析一下需要注意的问题：
+1.加锁过程必须设置过期时间，加锁和设置过期时间过程必须是原子操作。如果没有设置过期时间，那么就发生死锁，锁永远不能被释放。如果加锁后服务宕机或程序崩溃，来不及设置过期时间，同样会发生死锁。
+2.解锁必须是解除自己加上的锁。
+试想一个这样的场景，服务A加锁，但执行效率非常慢，导致锁失效后还未执行完，但这时候服务B已经拿到锁了，这时候服务A执行完毕了去解锁，把服务B的锁给解掉了，其他服务C、D、E...都可以拿到锁了，这就有问题了。加锁的时候我们可以设置唯一value，解锁时判断是不是自己先前的value就行了。
 
 ## 推荐阅读
 

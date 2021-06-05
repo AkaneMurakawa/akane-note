@@ -175,6 +175,16 @@ docker tag 镜像id hello:lastest // 打标签
 - RUN/SHELL ——> exec 形式的命令
 
 - CMD/ENTRYPOINT
+```
+RUN ["可执行文件", "参数1", "参数2"]
+# 例如：
+# RUN ["./test.php", "dev", "offline"] 等价于 RUN ./test.php dev offline
+```
+
+
+RUN和CMD区别
+- CMD 在docker run 时运行，作用：为启动的容器指定默认要运行的程序，程序运行结束，容器也就结束。
+- RUN 是在 docker build
 
 其他命令：
 
