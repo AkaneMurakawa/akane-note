@@ -108,6 +108,10 @@ docker run -p 端口 --rm --name container-name -d images-name
 
 -d：daemon，后台运行。当我们需要停止时，需要用：docker stop 容器id
 
+-m：自动分配内存
+
+--restart：无论退出状态是如何，都重启容器；--restart=always
+
 
 
 ## 常用软件启动命令
