@@ -39,7 +39,7 @@ OGNL是Object Graphic Navigation Language(对象图导航语言)的缩写，是J
 - @class@method(args)调用类的静态方法
 - @class@field调用类的静态字段值
 
-## @Ognl@isNotEmpyt
+## @Ognl@isNotBlank
 当我们需要对字符串判空的时候，如果每次都像下面这样写，其实是很麻烦的
 ```
 <if test="title != null and tile !=''">
