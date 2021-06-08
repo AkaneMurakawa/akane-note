@@ -56,68 +56,125 @@ docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /va
 
 ### 安装常用软件
 
+注：可以通过`docker stats`查看默认运行的大小，然后通过-m加上限制
+
+### MySQL(3306:3306)
+
+root/admin
+
 ```bash
-#首次启动
-$ docker run --name mysql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=admin mysql:5.7
-$ docker run --name redis -d -p 6379:6379 redis redis-server --appendonly yes
-$ docker run --name mongo -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin mongo
-$ docker run --name nginx -d -p 8080:80 nginx:1.19.7
+docker run --name test-mysql -d \
+-m 512M --memory-swap 1G \
+-p 3306:3306 \
+--restart always \
+-v /usr/loca/data/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=admin mysql:5.7
+```
 
+### MongoDB(27017:27017)
 
-# 后续启动
-$ docker start mysql
-$ docker start redis
-$ docker start mongo
-$ docker start nginx
+admin/admin
+
+```bash
+docker run --name test-mongo -d \
+-m 256M --memory-swap 512M \
+-p 27017:27017 \
+--restart always \
+-e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin mongo
+```
+
+### Redis(6379:6379)
+
+```bash
+docker run --name test-redis -d \
+-m 256M --memory-swap 512M \
+-p 6379:6379 \
+--restart always \
+redis redis-server --appendonly yes
 
 # 虚拟机安装redis客户端
 $ sudo apt install redis-tools
 ```
 
-### GitLab(默认端口80)
+### Nginx(9001:80)(8889:8889)
+
+admin/admin
+
+```bash
+$ docker run --name nginx -d -p 9001:80 nginx:1.19.7
+
+# nginx-gui
+docker pull crazyleojay/nginx_ui
+
+docker run --detach \
+--publish 9001:80 --publish 8889:8889 \
+--name nginx_ui \
+--restart always \
+crazyleojay/nginx_ui:latest
+```
+
+### GitLab(9002:80)
+
+root/12345678
 
 [GitLab Docker images | GitLab](https://docs.gitlab.com/omnibus/docker/)
 
 https://hub.docker.com/r/gitlab/gitlab-ee
 
-```
+```bash
 # git-ce 是社区版，gitlab-ee是企业版，收费版
 $ docker pull gitlab/gitlab-ce
-export GITLAB_HOME=/srv/gitlab
+export GITLAB_HOME=/usr/local/data/gitlab
 
-# 注意，gitlab特别吃内存
-sudo docker run --detach \
+# 注意，gitlab特别吃内存，这里仅是本地搭建，设置成了--restart no
+docker run --detach \
   --hostname gitlab.example.com \
-  --publish 443:443 --publish 9999:80 --publish 222:22 \
+  --publish 443:443 --publish 9002:80 --publish 222:22 \
   --name gitlab \
-  --restart always \
+  --restart no \
   --volume $GITLAB_HOME/config:/etc/gitlab \
   --volume $GITLAB_HOME/logs:/var/log/gitlab \
   --volume $GITLAB_HOME/data:/var/opt/gitlab \
   gitlab/gitlab-ce
 ```
 
-新建组-新建工程（在组下）-新建用户（分配组，赋值密码）
+使用：新建组-新建工程（在组下）-新建用户（分配组，赋值密码）
 
+### spug(9003:80)
 
+admin/admin
 
-### xxl-job
-
-https://www.xuxueli.com/xxl-job/#%E4%BA%8C%E3%80%81%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8
-```
-https://gitee.com/xuxueli0323/xxl-job/blob/master/doc/db/tables_xxl_job.sql#
-
-wget https://raw.githubusercontent.com/xuxueli/xxl-job/2.3.0/xxl-job-admin/src/main/resources/application.properties
-
-docker run -d --name xxl-job-admin -p 8080:8080 -v /root/local/application.properties:/application.properties  --net host -e PARAMS='--spring.config.location=/application.properties' xuxueli/xxl-job-admin:2.3.0
-```
-
-### spug(默认端口80)
 https://spug.dev/docs/install-docker/
-```
+```bash
 docker pull registry.aliyuncs.com/openspug/spug
-docker run -d --restart=always --name=spug -p 8888:80 -v /root/local/data/:/data registry.aliyuncs.com/openspug/spug
+docker run -d --name=spug \
+-p 9003:80 \
+--restart always \
+-v /usr/local/data/spug:/data registry.aliyuncs.com/openspug/spug
+
 docker exec spug init_spug admin admin
 docker restart spug
 ```
 
+### xxl-job(9004:8080)
+
+访问：http://localhost:8080/xxl-job-admin
+
+https://www.xuxueli.com/xxl-job/#%E4%BA%8C%E3%80%81%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8
+
+```bash
+# 下载数据库脚本执行
+https://gitee.com/xuxueli0323/xxl-job/blob/master/doc/db/tables_xxl_job.sql#
+# 注：需要下载配置文件，修改数据库连接信息
+wget https://raw.githubusercontent.com/xuxueli/xxl-job/2.3.0/xxl-job-admin/src/main/resources/application.properties
+
+docker run -d --name xxl-job-admin \
+-p 9004:8080 \
+--restart always \
+-v /usr/local/data/application.properties:/application.properties \
+-e PARAMS='--spring.config.location=/application.properties' xuxueli/xxl-job-admin:2.3.0
+
+# 本地访问
+--net host \
+```
+
+### 
