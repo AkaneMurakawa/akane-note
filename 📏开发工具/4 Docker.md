@@ -243,7 +243,20 @@ COPY init.sh /opt/docker/provision/entrypoint.d
 ADD supervisord-proxy.conf /opt/docker/etc/supervisor.d/prism-proxy.conf
 EXPOSE 80 8802
 ```
+Dockerfile示例：
+```
+# 注: 文件名为Dockerfile
+FROM openjdk:8-alpine
+EXPOSE 9090
+COPY demo.jar /mnt/demo.jar
+CMD ["java", "-jar", "/mnt/demo.jar"]
 
+# 构建
+docker build -t demo:0.0.1 .
+# 运行
+sudo docker run -d --name demo -p 9090:9090 demo:0.0.1
+
+```
 
 
 ## Docker Compose多容器
