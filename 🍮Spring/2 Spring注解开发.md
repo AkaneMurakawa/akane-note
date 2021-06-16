@@ -567,3 +567,20 @@ ModleMap
 
 更多注解，可以在IDEA中输入@然后查看
 
+
+## @Retryable
+```
+<dependency>
+   <groupId>org.springframework.retry</groupId>
+   <artifactId>spring-retry</artifactId>
+</dependency>
+        
+@EnableRetry
+@Retryable(value = Exception.class, maxAttempts = 6, backoff = @Backoff(delay = 3000L, multiplier = 60))
+
+value:指定发生的异常进行重试
+include:和value一样，默认空，当exclude也为空时，所有异常都重试
+exclude:指定异常不重试，默认空，当include也为空时，所有异常都重试
+maxAttemps:重试次数，默认3
+backoff:重试补偿机制，默认没有。delay = 3000L, multiplier = 60表示第一次3s，第二次隔3*60s，第三次为隔3*60*60s，以此类推
+```
