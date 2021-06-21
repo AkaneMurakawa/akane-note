@@ -228,7 +228,7 @@ http {
         listen       80;
         server_name  localhost;
 
-        #charset koi8-r;
+        #charset koi8-r; # 设置字符编码
 
         # 访问日志
         #access_log  logs/host.access.log  main;
@@ -565,9 +565,13 @@ server {
         server_name  localhost;                                              
         client_max_body_size 1024M;
 
+	charset utf-8,gbk; # 设置字符编码，这样展示中文目录就不会乱码
 
         location / {
                root   E:/wwwroot;
+	       autoindex on; # 开启目录浏览功能
+	       autoindex_exact_size off;  #关闭详细文件大小统计，让文件大小显示MB，GB单位，默认为b；
+               autoindex_localtime on;  #开启以服务器本地时区显示文件修改日期！
                index  index.html;
            }
     }
