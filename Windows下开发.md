@@ -255,9 +255,9 @@ services:
     environment:
       FR_DB_HOST: db
       FR_DB_PORT: 3306
-      FR_DB_NAME: your_filerun_database
-      FR_DB_USER: your_filerun_username
-      FR_DB_PASS: your_filerun_password
+      FR_DB_NAME: file_run # your_filerun_database
+      FR_DB_USER: root # your_filerun_username
+      FR_DB_PASS: admin # your_filerun_password
       APACHE_RUN_USER: www-data
       APACHE_RUN_USER_ID: 33
       APACHE_RUN_GROUP: www-data
