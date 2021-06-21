@@ -227,7 +227,7 @@ sudo docker run -d --name cloudreve \
 # 首次启动后请执行docker logs -f cloudreve获取初始密码
 ```
 
-### FileRun云盘系统(80:80)
+### FileRun云盘系统(9005:80)
 superuser/superuser
 https://docs.filerun.com/docker
 ```bash
@@ -269,7 +269,7 @@ services:
     links:
       - db:db
     ports:
-      - "80:80"
+      - "9004:80"
     volumes:
       - /home/ubuntu/data/filerun/html:/var/www/html
       - /home/ubuntu/data/filerun/user-files:/user-files
