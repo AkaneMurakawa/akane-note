@@ -1634,7 +1634,33 @@ org.springframework.validation.annotation
 
 org.hibernate.validator.constraints
 - @Length：只能用于String
+- hibernate-validator是对javax.validation的增强，一般情况下javax.validation能满足就使用javax.validation即可。
 
 @Valid和@Validated区别：
 - @Valid：没有分组的功能，可以用在方法、构造函数、方法参数和成员属性（字段）上
 - @Validated：提供了一个分组功能，可以在入参验证时，根据不同的分组采用不同的验证机制。可以用在类型、方法和方法参数上。但是不能用在成员属性（字段）上。
+
+### 4.5 JSON字段序列化
+com.alibaba.fastjson.annotation
+- @JSONField
+
+com.fasterxml.jackson.annotation
+- @JsonProperty(value = "status")
+- @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")：出参序列化
+- @JsonInclude(JsonInclude.Include.NON_NULL)
+
+org.springframework.format.annotation
+- @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")：入参序列化
+
+- com.google.gson.annotations
+@SerializedName
+
+结论：JsonFormat和DateTimeFormat应配合使用。
+```java
+/**
+* 创建时间
+*/
+@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
+@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+private Date createTime;
+```
