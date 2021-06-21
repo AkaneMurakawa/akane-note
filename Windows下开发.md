@@ -269,7 +269,7 @@ services:
     links:
       - db:db
     ports:
-      - "9004:80"
+      - "9005:80"
     volumes:
       - /home/ubuntu/data/filerun/html:/var/www/html
       - /home/ubuntu/data/filerun/user-files:/user-files
