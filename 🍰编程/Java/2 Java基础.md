@@ -1640,6 +1640,10 @@ org.hibernate.validator.constraints
 - @Valid：没有分组的功能，可以用在方法、构造函数、方法参数和成员属性（字段）上
 - @Validated：提供了一个分组功能，可以在入参验证时，根据不同的分组采用不同的验证机制。可以用在类型、方法和方法参数上。但是不能用在成员属性（字段）上。
 
+@Validated分组校验
+- 在添加注解时，指定group，并在@Validated表明value
+- 参考：https://blog.csdn.net/weiqiang915/article/details/114590304
+
 ### 4.5 JSON字段序列化
 com.alibaba.fastjson.annotation
 - @JSONField
