@@ -225,3 +225,54 @@ sudo docker run -d --name cloudreve \
 -v /home/ubuntu/data/cloudreve/avatar:/cloudreve/avatar xavierniu/cloudreve
 # 首次启动后请执行docker logs -f cloudreve获取初始密码
 ```
+
+### FileRun云盘系统
+https://docs.filerun.com/docker
+```bash
+sudo mkdir -p /home/ubuntu/data/filerun/db;
+sudo mkdir -p /home/ubuntu/data/filerun/html;
+sudo mkdir -p /home/ubuntu/data/filerun/user-files;
+sudo touch docker-compose.yml;
+sudo vim docker-compose.yml;
+```
+创建一个名称为docker-compose.yml的文件
+```yml
+version: '2'
+
+services:
+  db:
+    image: mariadb:10.1
+    environment:
+      MYSQL_ROOT_PASSWORD: admin # your_mysql_root_password
+      MYSQL_USER: root # your_filerun_username
+      MYSQL_PASSWORD: admin # your_filerun_password
+      MYSQL_DATABASE: file_run # your_filerun_database
+    volumes:
+      - /home/ubuntu/data/filerun/db:/var/lib/mysql
+
+  web:
+    image: afian/filerun
+    environment:
+      FR_DB_HOST: db
+      FR_DB_PORT: 3306
+      FR_DB_NAME: your_filerun_database
+      FR_DB_USER: your_filerun_username
+      FR_DB_PASS: your_filerun_password
+      APACHE_RUN_USER: www-data
+      APACHE_RUN_USER_ID: 33
+      APACHE_RUN_GROUP: www-data
+      APACHE_RUN_GROUP_ID: 33
+    depends_on:
+      - db
+    links:
+      - db:db
+    ports:
+      - "80:80"
+    volumes:
+      - /home/ubuntu/data/filerun/html:/var/www/html
+      - /home/ubuntu/data/filerun/user-files:/user-files
+```
+启动
+```
+docker-compose up -d
+```
