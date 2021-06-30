@@ -1,6 +1,6 @@
 ---
 title: C语言编程-前言
-date: '2018-09-07T03:55:13.000Z'
+date: 2018-09-07T03:55:13.000Z
 categories: C语言编程
 toc: true
 comments: true

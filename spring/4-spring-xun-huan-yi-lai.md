@@ -1,4 +1,4 @@
-# Spring循环依赖问题
+# 4 Spring循环依赖问题
 
 视频：子路老师Spring循环依赖讲解[https://www.bilibili.com/video/BV1uE411d7L5?p=6](https://www.bilibili.com/video/BV1uE411d7L5?p=6)
 

@@ -1,0 +1,137 @@
+# 音标
+
+## 元音分类
+
+Tense and Neutral/Relaxed
+
+Tense：紧元音，舌头或嘴唇收紧，例如：/**i**/、**/ou/**
+
+Neutral/Relaxed：个人感觉有点像用气说话，嘴巴动作没那么多，例如：**/ɪ**/、**/ɛ/**、**/ə/**、**/ʊ/**（只有四个）
+
+区别不在于发音长短，而在于发音的松紧
+
+## 美式音标
+
+美式音标，也称K.K.音标。
+
+| KK音标 | 发音 | example |
+| :--- | :--- | :--- |
+| **/i/** | yi\(第四声\) | please、see、meat、believe |
+| **/ɪ**/ | it | this、difficult、if、dinner |
+| **/eɪ**/ | ei\(第四声\) 有人叫你，你回答：欸 | late、gate、baseball、stay、OK |
+| **/ɛ/** | e\(第一声\) | bed、man、dread、friend |
+| **/æ/** | e\(第一声\) | apple、man、stand、angry |
+| **/ɑ/** | a\(第四声\) | hot、topic、office、modern |
+| **/ə/** == **/ʌ/** | 饿\(第四声\) | but、gun、jump、love |
+| **/ɔ/** | o\(第四声\) | always、tall、bought、thought |
+| **/ou/** == **/o/** | 欧\(第四声\) 耶 | go、drove、slow、moment |
+| **/ʊ/** | u | book、foot、pull、push、took |
+| **/u/** | wu\(第四声\) | moon、shoes、room、blew |
+| **/ɛr/** | 翘舌饿\(第四声\) | earth、thursdaty、girl、work |
+| **/аɪ**/ | 爱\(第四声\) | time、wild、nine、dining |
+| **/aʊ/** | 奥\(第四声\) | now、house、ground、announce |
+| **/ɔɪ/** | oi\(第四声\) | enjoy、noise、boys、annoying |
+
+## **/i/**和**/ɪ**/
+
+**/i/**这些词通常包含字母ee、ea、ie、ei
+
+**/ɪ**/这些词通常包含字母i，有时字母y也发这个音，放单词中间而不是最后，如：system、gym
+
+* Can you feel it？
+* Can you fill it?
+* Did you heat it?
+* Dit you hit it?
+* He doesn't want to leave.
+* He doesn't want to live.
+* * She was feeling sleepy after eating the big meal.
+* These three people speak Chinese.
+* We love the green fields and the beach breezes.
+* Steve believes he will see Peter this week.
+* I will leave the East Coast in three weeks.
+* * There are six filthy dishes in the kitchen sink.
+* Mr. adn Mrs. Smith lived in India for six years.
+* Bill took some interesting pictures on his trip to Italy last Spring.
+* The winter wind will bring a big chill.
+* Do you think that this swimmer has the ability to win?
+
+## **/ɑ/** 和 **/ə/** == **/ʌ/**
+
+**/ɑ/**这些词的发音通常是o，例如：hot。发音是延长的，例如：stop\(长\)
+
+**/ə/**这些词的发音通常是u，例如：but、up、fun、有时是ou，有时是o，例如：love，而不是lave。son、my son、other、done
+
+* shot、shut
+* Don、done
+* lock、luck
+* cop、cup
+* not、nut
+* robber、rubber
+* The modern novel is very popular.
+* Tom will watch hockey  with his father.
+* John will probably study biology in college.
+* I will not bother to respond to Tom's offer.
+* If you gossip about your boss you might lose your job.
+* * We must discuss this with the other judge.
+* My buddy Doug is a wonderful drummer.
+* On Mondays he plays the drums in that club.
+* On Sunday I had duck for lunck with my cousin.
+* He doesn't study much and he loves to have fun.
+
+## **/u/** 和**/ʊ/**
+
+* oo，例如：food、moon。ue，例如：blue、true
+* oo，例如：look、took、shook。ould，例如：would、could、should。u，例如：push
+
+## **/ɔ/**
+
+al：fall
+
+au：automated
+
+aw：saw、law、awful
+
+## **/ou/**
+
+o：post、moment、go
+
+ow：flow、slow、show
+
+oa：road、boat、soap
+
+## /ɛr/
+
+er：her
+
+ar：grammar
+
+ear：learn、heard
+
+ir：bird、first
+
+or：work、worry、word
+
+ur：nurse、hurts
+
+## 重元音
+
+ban**a**na 、C**a**nada
+
+一般重读动词和名词，突出关键字
+
+## 弱化音
+
+I'd like to talk to you
+
+弱化元音，念成/tə/，不念/tu/。
+
+## 清辅音和浊辅音
+
+一个有声，一个无声
+
+例如：Z S， eyes和ice
+
+例如：V F five，have
+
+例如：D T ，fast D， better d
+
