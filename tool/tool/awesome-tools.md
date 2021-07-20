@@ -12,3 +12,14 @@ org.springframework.util.ReflectionUtils
 
 org.springframework.beans.BeanUtils
 
+## 获取Mybatis-Plus租户注解表名
+```
+List<TableInfo> tableInfos = TableInfoHelper.getTableInfos();
+        TABLE_TENANT.addAll(ListUtils.forEachFunc(
+                tableInfos,
+                info -> AnnotationUtils.isAnnotationDeclaredLocally(TableTenant.class, info.getEntityType()),
+                info -> info.getTableName()));
+```                
+
+## Spring注解工具类
+org.springframework.core.annotation.AnnotationUtils#getAnnotation(java.lang.reflect.AnnotatedElement, java.lang.Class<A>)
