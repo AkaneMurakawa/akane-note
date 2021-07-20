@@ -2,7 +2,7 @@
 
 ## 前言
 
-maven学习笔记，阅读官方文档\([http://maven.apache.org/guides/index.html\)为主，其它为辅，在这里并不会写太多基础的东西。](http://maven.apache.org/guides/index.html%29为主，其它为辅，在这里并不会写太多基础的东西。)
+maven学习笔记，阅读[官方文档](http://maven.apache.org/guides/index.html)为主，其它为辅，在这里并不会写太多基础的东西。
 
 maven仓库：[https://mvnrepository.com/](https://mvnrepository.com/)
 
