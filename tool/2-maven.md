@@ -349,7 +349,7 @@ pluginManagent
 
 ### 聚合 - modules  \(一键安装各个模块工程\)
 
-一般都是在父工程
+一般都是在父工程，自动编译子模块
 
 ```text
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -386,8 +386,20 @@ pluginManagent
 </properties>
 ```
 
-### Profile\(-P 参数\)
+### 多环境Profile\(-P 参数\)
+https://zhuanlan.zhihu.com/p/148823337
+在Spring Boot中多环境配置文件名需要满足application-{profile}.yml的格式，其中{profile}对应你的环境标识;
+```
+application-dev 开发环境
+application-test 测试环境
+application-prod 生产环境
 
+可以在application.yml文件指定环境，也可以在pom文件中指定
+spring:
+  profiles:
+    active: dev
+```
+在pom文件指定环境
 ```text
 mvn  -P profile-1  指定配置环境，例如 mvn -P test
 mvn  -P !profile-1  指定不是某环境，例如 mvn -P !test
@@ -396,14 +408,23 @@ pom.xml中配置
 <profiles>
     <profile>
         <!--测试环境配置参数据 -->
+        <!-- id为-P 的参数，例如：-P test -->
         <id>test</id>
-        <properties>
-            <env>test</env>
-        </properties>
+        <!--默认激活配置-->
         <activation>
             <activeByDefault>true</activeByDefault>
         </activation>
+        <properties>
+            <!-- 这里可以自定义一些配置属性 -->
+            <!-- 停用服务发现 -->
+            <nacos.enable>false</nacos.enable>
+            <nacos.username>nacos</nacos.username>
+            <nacos.password>nacos</nacos.password>
+            <!--当前环境-->
+            <profile.name>local</profile.name>
+        </properties>
     </profile>
+    
     <profile>
         <!--开发环境配置参数据 -->
         <id>dev</id>
@@ -421,6 +442,30 @@ pom.xml中配置
 </profiles>
 
 Setting中也可以进行配置
+```
+
+注意：在pom文件profile配置中，我们可以自定义属性，然后在SpringBoot配置文件中使用，使用方法：@属性名称@
+例如：新建bootstrap.yml文件如下
+```properties
+spring:
+  profiles:
+    # 当前激活环境
+    active: @profile.name@
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    #配置Bus id(远程推送事件)
+    bus:
+      id: ${spring.application.name}:${server.port}
+    nacos:
+      config:
+        enabled: @nacos.enable@
+        # Nacos 认证用户
+        username: @nacos.username@
+        # Nacos 认证密码
+        password: @nacos.password@
+        # 命名空间 常用场景之一是不同环境的配置的区分隔离，例如开发测试环境和生产环境的资源（如配置、服务）隔离等
+        namespace: @config.namespace@
 ```
 
 ### 部署到远程仓库
@@ -471,13 +516,13 @@ mvn dependency:tree
 ### 插件
 
 ```text
-父pom.xml
 <build>
     <plugins>
         <!-- 引入 spring boot maven 插件： 1、打包项目为可执行的jar包(mvn package) 2、启动项目 (mvn spring-boot:run) / java -jar xxxx.jar -->
         <plugin>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
+            
             <dependencies>
                 <!-- Spring-Loaded项目提供了强大的热部署功能，添加/删除/修改 方法/字段/接口/枚举 等代码的时候都可以热部署 -->
                 <dependency>
@@ -491,16 +536,39 @@ mvn dependency:tree
                     <goals>
                         <goal>repackage</goal>
                     </goals>
-                    <!--                        <configuration>-->
-                    <!--                            <skip>${repackage.skip}</skip>-->
-                    <!--                        </configuration>-->
                 </execution>
             </executions>
+        </plugin>
+        
+        
+        <!-- 设置编译版本 -->
+       <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version>
             <configuration>
-                <!-- 跳过单元测试 -->
-                <skip>${repackage.skip}</skip>
-                <mainClass>${main.class}</mainClass>
-                <layout>ZIP</layout>
+                <source>1.8</source>
+                <target>1.8</target>
+                <encoding>UTF-8</encoding>
+            </configuration>
+        </plugin>
+        
+        
+        <!-- 热部署 -->
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <fork>true</fork>
+            </configuration>
+        </plugin>  
+        
+        <!-- 打包跳过测试 -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+                <skipTests>true</skipTests>
             </configuration>
         </plugin>
 
@@ -517,37 +585,16 @@ mvn dependency:tree
                 </execution>
             </executions>
         </plugin>
+        
     </plugins>
-</build>
-
-子pom.xml
-<build>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-                <source>1.8</source>
-                <target>1.8</target>
-            </configuration>
-        </plugin>
-        <!-- 热部署 -->
-        <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            <configuration>
-                <mainClass>${main.class}</mainClass>
-                <fork>true</fork>
-            </configuration>
-        </plugin>
-    </plugins>
+    
+    <!-- 资源设置 -->
     <resources>
         <resource>
             <directory>src/main/resources/profile/${env}</directory>
             <excludes>
                 <exclude>bak/**</exclude>
-            </excludes>
-            <!-- 过滤资源 -->
+            </excludes>            
             <filtering>true</filtering>
         </resource>
         <resource>
@@ -557,7 +604,23 @@ mvn dependency:tree
             </excludes>
             <filtering>false</filtering>
         </resource>
+        <resource>
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/*.xml</include>
+                <include>**/*.json</include>
+                <include>**/*.ftl</include>
+            </includes>
+        </resource>
     </resources>
+</build>
+
+子pom.xml
+<build>
+    <plugins>
+
+    </plugins>
+
 </build>
 ```
 
