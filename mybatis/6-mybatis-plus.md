@@ -166,6 +166,8 @@ this.lambdaUpdate()
                 .update();
 ```
 
+### 使用租户时不能使用using语法
+使用租户时，联表会自动加on 租户条件，使用using则会语法错误
 
 
 
