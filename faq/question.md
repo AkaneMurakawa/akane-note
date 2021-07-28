@@ -356,3 +356,10 @@ cat /etc/resolv.conf
 </dependency>
 ```
 
+### SPUG开源框架的坑
+应用发布日志用的redis存储，无过期时间。用的数据库是`select 1`.使用时一定要给redis设置过期策略
+```
+# 够用了
+maxmemory 500mb 
+maxmemory-policy allkeys-lru
+```
