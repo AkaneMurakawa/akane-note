@@ -352,3 +352,8 @@ git pull （下载远程库更新的东西）
 git config core.ignorecase false
 ```
 
+### 3 Git合并流程
+GitLab基于标签(Tag)拉取新的分支，打上新的tag后发布
+- 点击仓库-标签-查看最新标签
+- 点击仓库-分支-新建分支，创建自(选择最新的标签)
+
