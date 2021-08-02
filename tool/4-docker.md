@@ -279,3 +279,7 @@ volumes:
   logvolume01: {}
 ```
 
+## 问题整理
+### Docker容器启动失败
+- 查看log日志，docker log 容器名字，建议下载个Portainer管理Docker
+- 如果是修改了文件导致的，可以使用docker cp命令来拷贝宿主机和容器间的文件，https://www.runoob.com/docker/docker-cp-command.html
