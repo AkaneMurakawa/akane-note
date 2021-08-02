@@ -71,6 +71,7 @@ $ docker info
 ### Docker可视化管理工具Portainer
 
 [https://documentation.portainer.io/v2.0/deploy/ceinstalldocker/](https://documentation.portainer.io/v2.0/deploy/ceinstalldocker/)
+登录的账号密码在初始化界面的时候，自行设置
 
 ```bash
 docker volume create portainer_data
