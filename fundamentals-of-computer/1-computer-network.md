@@ -27,7 +27,7 @@ OSI的实现：TCP/IP
 
 ### TCP报文头
 
-![img](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻计算机基础/images/5c36e57b0001d28b19201080.jpg)
+![img](../.gitbook/assets/5c36e57b0001d28b19201080.jpg)
 
 * Source Port：源端口，2个字节，16位
 * Destination Port：目的端口，2个字节，16位
@@ -122,7 +122,7 @@ C:\Users\AkaneMurakawa>ping bilibili.com
 
 模拟三次握手，因此bilibili的ip地址可能是dst也可能是src
 
-![image-20201126203838485](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻计算机基础/images/image-20201126203838485.png)
+![image-20201126203838485](../.gitbook/assets/image-20201126203838485.png)
 
 ### 问题
 
@@ -253,7 +253,7 @@ ESTABLISHED 232
 
 ### UDP报文结构
 
-![image-20201126212016698](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻计算机基础/images/image-20201126212016698.png)
+![image-20201126212016698](../.gitbook/assets/image-20201126212016698.png)
 
 * Source Port：源端口，2个字节，16位
 * Destination Port：目的端口，2个字节，16位
@@ -280,7 +280,7 @@ RTO：（Retransmission Timeout）重传时间间隔，需要由RTT进行计算�
 
 ### 窗口数据的计算过程
 
-![image-20201126213618716](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻计算机基础/images/image-20201126213618716.png)
+![image-20201126213618716](../.gitbook/assets/image-20201126213618716.png)
 
 窗口数据计算：
 
@@ -295,11 +295,11 @@ RTO：（Retransmission Timeout）重传时间间隔，需要由RTT进行计算�
 
 还需要发送的窗口大小：EffectiveWindow = AdvertisedWindow - \(LastByteSent - LastByteAcked\)
 
-![image-20201126214204211](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻计算机基础/images/image-20201126214204211.png)
+![image-20201126214204211](../.gitbook/assets/image-20201126214204211.png)
 
 对于发送方：只有序号在 `已发送未ACK - 已发送并ACK`范围内，滑动窗口才会移动
 
-![image-20201126214343821](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻计算机基础/images/image-20201126214343821.png)
+![image-20201126214343821](../.gitbook/assets/image-20201126214343821.png)
 
 ## HTTP
 
@@ -317,21 +317,21 @@ RTO：（Retransmission Timeout）重传时间间隔，需要由RTT进行计算�
 
 注：HTTP请求结构非常重要，当我们需要发送HTTP请求时候，如爬虫，就需要利用HTTP请求结构。发送相应的请求和数据。
 
-![image-20201126220624873](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻计算机基础/images/image-20201126220624873.png)
+![image-20201126220624873](../.gitbook/assets/image-20201126220624873.png)
 
 使用WireShark测试
 
-![image-20201126221636392](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻计算机基础/images/image-20201126221636392.png)
+![image-20201126221636392](../.gitbook/assets/image-20201126221636392.png)
 
 ### HTTP响应结构
 
 由状态行、响应头、响应正文（响应体）组成
 
-![image-20201126221718820](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻计算机基础/images/image-20201126221718820.png)
+![image-20201126221718820](../.gitbook/assets/image-20201126221718820.png)
 
 使用WireShark测试
 
-![image-20201126221931146](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻计算机基础/images/image-20201126221931146.png)
+![image-20201126221931146](../.gitbook/assets/image-20201126221931146.png)
 
 ### 在浏览器中输⼊url地址，按下回车之后经历的流程
 
@@ -379,18 +379,18 @@ RTO：（Retransmission Timeout）重传时间间隔，需要由RTT进行计算�
 
 由服务器发给客户端的特殊信息，以文本的形式存放在客户端（在请求头）
 
-![image-20201126225016340](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻计算机基础/H:/akane-note/💻计算机基础/images/image-20201126225016340.png)
+![image-20201126225016340](../.gitbook/assets/image-20201126225016340.png)
 
 #### Sesssion
 
 * 服务器端的机制，在服务器上保存的信息。
 * 解析客户端请求并操作**session id**，按需保存状态信息
 
-![image-20201126225423840](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻计算机基础/images/image-20201126225423840.png)
+![image-20201126225423840](../.gitbook/assets/image-20201126225423840.png)
 
 使用cookie的方式实现：JESESSIONID
 
-![image-20201126232429171](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻计算机基础/images/image-20201126232429171.png)
+![image-20201126232429171](../.gitbook/assets/image-20201126232429171.png)
 
 #### Cookie和Seesion的区别
 
@@ -400,7 +400,7 @@ RTO：（Retransmission Timeout）重传时间间隔，需要由RTT进行计算�
 
 ### HTTP 和 HTTPS 的区别
 
-![image-20201126232645008](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻计算机基础/images/image-20201126232645008.png)
+![image-20201126232645008](../.gitbook/assets/image-20201126232645008.png)
 
 #### 加密的方式
 
@@ -438,7 +438,7 @@ Socket是对TCP/IP协议的抽象，是操作系统对外开发的接口。
 
 accept：阻塞
 
-![image-20201126234456363](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻计算机基础/images/image-20201126234456363.png)
+![image-20201126234456363](../.gitbook/assets/image-20201126234456363.png)
 
 注：IP标识主机唯一，端口和TCP标识进程唯一
 

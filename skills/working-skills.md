@@ -48,7 +48,7 @@ curl http://127.0.0.1:8080/test -X POST -d '{"code":"test"}' -H "Content-Type:ap
 
 Tip：如果嫌麻烦，可以在postman中输入对应信息，点击右上角的code复制内容即可，语法是一样。具体见：man curl
 
-![image-20201125173813653](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/⌚技巧/images/image-20201125173813653.png)
+![image-20201125173813653](../.gitbook/assets/image-20201125173813653.png)
 
 ## 7 JOI工具包
 

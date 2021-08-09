@@ -247,7 +247,7 @@ OK
 "name3"
 ```
 
-![image-20201129013744378](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🌎数据库/Redis/images/image-20201129013744378.png)
+![image-20201129013744378](../../.gitbook/assets/image-20201129013744378.png)
 
 ### Hash
 

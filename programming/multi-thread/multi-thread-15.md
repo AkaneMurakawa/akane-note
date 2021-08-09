@@ -366,7 +366,7 @@ BlockingQueue是对Queue进一步的改进，用于并发编程的容器。Queue
 
 put\(\)和take\(\)的原理：其实利用的就是LockSupport的park和unPark方法，当队列里无任务时，take就会被park阻塞住，当有任务来说，unPark唤醒阻塞的线程。
 
-![image-20201129233428789](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/多线程/images/image-20201129233428789.png)
+![image-20201129233428789](../../.gitbook/assets/image-20201129233428789.png)
 
 ### ArrayBlockingQueue
 

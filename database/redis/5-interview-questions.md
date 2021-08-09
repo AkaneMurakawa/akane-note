@@ -122,7 +122,7 @@ SCAN cursor \[MATCH patter\] \[COUNT count\]
 
 解决：Redis后面提供了一个原子性命令，将两者放在一个原子里操作
 
-![image-20201129020413965](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🌎数据库/Redis/images/image-20201129020413965.png)
+![image-20201129020413965](../../.gitbook/assets/image-20201129020413965.png)
 
 场景：避免不同节点重复处理、避免数据被破坏
 

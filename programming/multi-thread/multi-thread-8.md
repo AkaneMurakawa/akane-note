@@ -4,7 +4,7 @@ CountDown代表计数递减，Latch是“门闩”（mén shuān ）的意思。
 
 顾名思义，一个门闩卡住，然后不停的递减，当减少到0的时候才继续执行。理解为：**倒计时器**
 
-![image-20201129232924574](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/多线程/images/image-20201129232924574.png)
+![image-20201129232924574](../../.gitbook/assets/image-20201129232924574.png)
 
 用途：等待一些线程执行结束后，才开始执行本线程的任务。例如：压测的时候，写单元测试可以用来模拟并发，等多少线程才开始执行。
 

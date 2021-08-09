@@ -26,13 +26,13 @@
 
 原理：fork 和 cow\(copy on write\)
 
-![image-20201129022239167](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🌎数据库/Redis/images/image-20201129022239167.png)
+![image-20201129022239167](../.gitbook/assets/image-20201129022239167.png)
 
 fork是指redis通过创建子进程来进行RDB操作；
 
 cow指的是，子进程创建后，父子进程共享数据段，父进程继续提供读写服务，写脏的页面数据会逐渐和子进程分离开来。
 
-![image-20201129022254587](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🌎数据库/Redis/images/image-20201129022254587.png)
+![image-20201129022254587](../../.gitbook/assets/image-20201129022254587.png)
 
 流程：
 
@@ -66,7 +66,7 @@ AOF是存放每条写命令的，所以会不断的增大，当大到一定程�
 
 AOF rewrite
 
-![image-20201129022914712](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🌎数据库/Redis/images/image-20201129022914712.png)
+![image-20201129022914712](../../.gitbook/assets/image-20201129022914712.png)
 
 修复AOF文件
 
@@ -454,7 +454,7 @@ redis-cli --cluster help
 
 缺点：潜在问题，数据倾斜。集中在一台服务器
 
-![image-20201129113551721](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🌎数据库/Redis/images/image-20201129113551721.png)
+![image-20201129113551721](../../.gitbook/assets/image-20201129113551721.png)
 
 解决办法：引入虚拟节点解决数据倾斜问题
 

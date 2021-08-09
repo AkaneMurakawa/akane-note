@@ -2,7 +2,7 @@
 
 Semaphore：信号的意思。信号量。允许多个线程同时访问（对比：ReentrantLock只允许一个）
 
-![image-20201129233238100](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/多线程/images/image-20201129233238100.png)
+![image-20201129233238100](../../.gitbook/assets/image-20201129233238100.png)
 
 用途：限流，控制并发数量
 

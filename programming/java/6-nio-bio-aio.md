@@ -9,7 +9,7 @@ Block-IO：InputStream、OutputStream，Reader和Writer（Tomcat7.0是BIO）
 * 线程多
 * 性能差
 
-![image-20201129013017809](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/Java/images/image-20201129013017809.png)
+![image-20201129013017809](../../.gitbook/assets/image-20201129013017809.png)
 
 ## NIO
 
@@ -44,15 +44,15 @@ NonBlock-IO：构建**多路复用**的、同步非阻塞的IO操作。例如：
 
 调用系统级别的select  poll  epoll
 
-![image-20201130000929554](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/Java/images/image-20201130000929554.png)
+![image-20201130000929554](../../.gitbook/assets/image-20201130000929554.png)
 
-![image-20201130001008646](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/Java/images/image-20201130001008646.png)
+![image-20201130001008646](../../.gitbook/assets/image-20201130001008646.png)
 
-![image-20201130001036160](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/Java/images/image-20201130001036160.png)
+![image-20201130001036160](../../.gitbook/assets/image-20201130001036160.png)
 
 ## AIO
 
 Asynchronous IO：基于事件和回调机制
 
-![image-20201130001948616](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/Java/images/image-20201130001948616.png)
+![image-20201130001948616](../../.gitbook/assets/image-20201130001948616.png)
 

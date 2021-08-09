@@ -122,7 +122,7 @@ B+ 树为了维护索引有序性，在**插入新值**的时候需要做必要�
 * 聚簇索引：不是单独的索引类型，而是指数据存储方式。叶子节点**存的是整行数据**。在 InnoDB 里，主键索引也被称为聚簇索引（clustered index）。 
 * 非聚簇索引：叶子节点**内容是主键的值**，不直接存储数据。在 InnoDB 里，非主键索引也被称为二级索引（secondary index）。
 
-![image-20201128175838166](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🌎数据库/MySQL/images/image-20201128175838166.png)
+![image-20201128175838166](../../.gitbook/assets/image-20201128175838166.png)
 
 InnoDB 采用聚集\(聚簇\)索引，MyISAM 采用非聚集索引。我们也可以通过下图MySQL的数据存储划分结果得知。
 

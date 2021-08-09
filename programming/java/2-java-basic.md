@@ -416,7 +416,7 @@ JVM小知识：在JVM里对字符串有一个优化。其实String也是一个�
 
 使用不当：会造成常量池过大，fastjson1.1.24版本之前存在这个漏洞，后修复了（[https://tech.meituan.com/2014/03/06/in-depth-understanding-string-intern.html）](https://tech.meituan.com/2014/03/06/in-depth-understanding-string-intern.html）)
 
-![image-20201129143054017](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/Java/images/image-20201129143054017.png)
+![image-20201129143054017](../../.gitbook/assets/image-20201129143054017.png)
 
 `String st1 = new String(“abc”);`创建几个对象？
 

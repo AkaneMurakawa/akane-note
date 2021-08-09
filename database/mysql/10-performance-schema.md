@@ -237,7 +237,7 @@ performance_schema_max_sql_text_length=1024
 
 ​ 配置表之间存在相互关联关系，按照配置影响的先后顺序，可添加为
 
-![image-20191203125003597](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🌎数据库/MySQL/C:/Users/63198/AppData/Roaming/Typora/typora-user-images/image-20191203125003597.png)
+![image-20191203125003597](../../.gitbook/assets/image-20191203125003597.png)
 
 ```sql
 /*

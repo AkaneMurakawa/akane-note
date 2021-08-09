@@ -25,7 +25,7 @@
 * **PS+PO（默认）**
 * ParNew + CMS
 
-![image-20201122131438954](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/JVM/images/image-20201122131438954.png)
+![image-20201122131438954](../../.gitbook/assets/image-20201122131438954.png)
 
 ### 1、Serial GC\(-XX:+UseSerialGC 复制算法\)
 
@@ -36,7 +36,7 @@
 * 单CPU效率最高
 * jvm参数指定-client时默认的垃圾收集器
 
-![image-20201121174902931](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/JVM/images/image-20201121174902931.png)
+![image-20201121174902931](../../.gitbook/assets/image-20201121174902931.png)
 
 JVM运行模式
 
@@ -66,7 +66,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.171-b11, mixed mode) # Server模式
 
 * 它关心的是**吞吐量**。吞吐量 = 用户代码time/\(用户time+ GC time\)；
 
-![image-20201121175136813](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/JVM/images/image-20201121175136813.png)
+![image-20201121175136813](../../.gitbook/assets/image-20201121175136813.png)
 
 ### 4、Parallel Old GC（PO）\(-XX:+UseParallelOldGC 标记-压缩算法\)
 
@@ -103,7 +103,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.171-b11, mixed mode) # Server模式
 * 占用CPU，**空间碎片（Concurrent Mark Sweep采用标记清除算法\(Mark-Sweep\)）**，并发异常
 * CMS收集器关注点是**响应时间（STW越短，响应时间越好），低延迟**，**关注的是用户体验**；
 
-![image-20201122012746375](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/JVM/images/image-20201122012746375.png)
+![image-20201122012746375](../../.gitbook/assets/image-20201122012746375.png)
 
 #### CMS四个阶段
 
@@ -115,7 +115,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.171-b11, mixed mode) # Server模式
 
 阶段四：并发清除（CMS concurrent sweep）
 
-![image-20201122015018539](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/JVM/images/image-20201122015018539.png)
+![image-20201122015018539](../../.gitbook/assets/image-20201122015018539.png)
 
 **初始标记**
 
@@ -200,7 +200,7 @@ G1收集器特点：
 * 将整个Java堆内存划分成多个大小相等的Region
 * 年轻代和老年代不再物理隔离
 
-![image-20201129154455566](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/JVM/images/image-20201129154455566.png)
+![image-20201129154455566](../../.gitbook/assets/image-20201129154455566.png)
 
 ### 8、ZGC\(jdk11\)
 

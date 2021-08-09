@@ -2,7 +2,7 @@
 
 Exchanger：交换机
 
-![image-20201129233325419](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/多线程/images/image-20201129233325419.png)
+![image-20201129233325419](../../.gitbook/assets/image-20201129233325419.png)
 
 用途：
 

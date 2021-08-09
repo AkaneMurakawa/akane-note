@@ -16,7 +16,7 @@ Docker采用CS架构，一个客户端，一个服务器。
 
 ## Docker原理
 
-![image-20210306132420278](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/📏开发工具/images/image-20210306132420278.png)
+![image-20210306132420278](../.gitbook/assets/image-20210306132420278.png)
 
 ## 教程
 
@@ -63,7 +63,7 @@ Image\(镜像\)：用于**创建Docker Container\(容器\)的模板**，打包�
 
 Docker Container\(容器\)：则是一个或一组独立运行的**应用**，运行的程序。（可写层）
 
-![image-20210306133317747](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/📏开发工具/images/image-20210306133317747.png)
+![image-20210306133317747](../.gitbook/assets/image-20210306133317747.png)
 
 ## 常用命令-容器管理
 
@@ -111,7 +111,7 @@ Docker Container\(容器\)：则是一个或一组独立运行的**应用**，�
 
 删除：docker volume rm
 
-![image-20210306144337272](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/📏开发工具/images/image-20210306144337272.png)
+![image-20210306144337272](../.gitbook/assets/image-20210306144337272.png)
 
 ## 运行镜像-创建容器
 

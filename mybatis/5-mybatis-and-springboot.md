@@ -28,7 +28,7 @@ org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration
 2. 主要的两个方法：sqlSessionTemplate\(\)和sqlSessionFactory\(\)，这两个方法都加上了@Bean和@ConditionalOnMissingBean注解，如果我们未定义则会注入默认的Bean。
 3. 另外在这个类中，还包含了两个内部类：AutoConfiguredMapperScannerRegistrar，MapperScannerRegistrarNotFoundConfiguration。可以看到MapperScannerRegistrarNotFoundConfiguration通过@Import导入了AutoConfiguredMapperScannerRegistrar，所以自动装配的过程其实是在AutoConfiguredMapperScannerRegistrar。
 
-![mybatis](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍓MyBatis/images/mybatis14.png)
+![mybatis](../.gitbook/assets/mybatis14.png)
 
 ## AutoConfiguredMapperScannerRegistrar
 

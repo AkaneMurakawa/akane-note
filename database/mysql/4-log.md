@@ -70,7 +70,7 @@ Undo Log是为了实现事务的原子性，在MySQL数据库InnoDB存储引擎�
 
 数据行里的DB\_TRX\_ID、DB\_ROLL\_PTR、DB\_ROW\_ID
 
-![image-20201129003107999](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🌎数据库/MySQL/images/image-20201129003107999.png)
+![image-20201129003107999](../../.gitbook/assets/image-20201129003107999.png)
 
 ### 数据页
 

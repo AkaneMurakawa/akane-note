@@ -106,7 +106,7 @@ echo -e $str
 
 ### 语法
 
-![image.png](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻Linux/images/shell2.png)
+![image.png](../.gitbook/assets/shell2.png)
 
 ```text
 # 变量

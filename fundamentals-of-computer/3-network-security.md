@@ -36,7 +36,7 @@ CA是证书的签发机构，它是公钥基础设施（Public Key Infrastructur
 * CA保证公钥不被篡改
 * 它要制定政策和具体步骤来验证、识别用户身份，并对用户证书进行签名，以确保证书持有者的身份和公钥的拥有权。
 
-![img](images/TB1JNDiVNjaK1RjSZFAXXbdLFXa-796-76.png)
+![img](../.gitbook/assets/TB1JNDiVNjaK1RjSZFAXXbdLFXa-796-76.png)
 
 常见的CA厂商
 
@@ -58,7 +58,7 @@ CA是证书的签发机构，它是公钥基础设施（Public Key Infrastructur
 * OV（Organization Validation）证书在DV证书验证的基础上还需要进行公司的验证，一般他们会通过购买邓白氏等这类信息库来查询域名所属的公司以及这个公司的电话信息，通过拨打这个公司的电话来确认公司是否授权申请OV证书。
 * EV证书一般是在OV的基础上还需要公司的金融机构的开户许可证，不过不同CA的做法不一定一样，例如申请人是地方政府机构的时候是没有金融机构的开户证明的，这时候就会需要通过别的方式去鉴别申请人的实体信息。
 
-![83cf43c8886ff637c1eb77a319bb0fc5a327e3e5](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/💻计算机基础/H:/akane-note/💻计算机基础/images/83cf43c8886ff637c1eb77a319bb0fc5a327e3e5.jpeg)
+![83cf43c8886ff637c1eb77a319bb0fc5a327e3e5](../.gitbook/assets/83cf43c8886ff637c1eb77a319bb0fc5a327e3e5.jpeg)
 
 ## 安装证书
 

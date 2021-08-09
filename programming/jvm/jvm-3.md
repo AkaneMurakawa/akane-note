@@ -40,7 +40,7 @@ public class TestPlus {
 
 基于寄存器的指令集
 
-![image-20201129140455644](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/JVM/images/image-20201129140455644.png)
+![image-20201129140455644](../../.gitbook/assets/image-20201129140455644.png)
 
 ### 常见字节码指令
 

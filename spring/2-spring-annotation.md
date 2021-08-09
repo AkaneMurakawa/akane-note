@@ -15,7 +15,7 @@ Dependency Injection 依赖注入，**把底层类作为参数传递给上层类
 * Constructor
 * Annotation
 
-![image-20201130003338936](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍮Spring/images/image-20201130003338936.png)
+![image-20201130003338936](../.gitbook/assets/image-20201130003338936.png)
 
 ### DL依赖查找
 

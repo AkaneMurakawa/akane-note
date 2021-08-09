@@ -56,7 +56,7 @@ H：（Threads mode）设置线程模式
 
 监控JVM，线上基本不用，而是在测试监控时候用。线上一般用arthas
 
-![image-20201122222710238](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/JVM/images/image-20201122222710238.png)
+![image-20201122222710238](../../.gitbook/assets/image-20201122222710238.png)
 
 ### jvisualvm
 
@@ -405,7 +405,7 @@ Started HTTP server on port 7000
 Server is ready.
 ```
 
-![image-20201123000359043](https://github.com/AkaneMurakawa/akane-note/tree/83689663b4c2a2a0c5a5afb1d9dea3c90e87b904/🍰编程/JVM/images/image-20201123000359043.png)
+![image-20201123000359043](../../.gitbook/assets/image-20201123000359043.png)
 
 ## 监控JVM
 
